@@ -10,7 +10,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Draw(5,2,'*');
+            Draw(5,2,'$');
             Console.ReadLine();
         }
         static void Draw(int x,int y, char sym) {

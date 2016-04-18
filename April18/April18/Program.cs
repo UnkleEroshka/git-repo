@@ -9,7 +9,13 @@ namespace April18
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello w");
+            int x1 = 1;
+            int y1 = 3;
+            char sym = '*';
+
+            Console.SetCursorPosition(x1, y1);
+            Console.WriteLine(sym);
+
             Console.ReadLine();
         }
     }

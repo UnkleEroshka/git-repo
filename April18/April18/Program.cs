@@ -9,7 +9,8 @@ namespace April18
     {
         static void Main(string[] args)
         {
-            Console.Write("Hello w");
+            Console.WriteLine("Hello w");
+            Console.ReadLine();
         }
     }
 }

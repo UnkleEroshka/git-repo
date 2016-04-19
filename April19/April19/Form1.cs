@@ -9,11 +9,21 @@ using System.Windows.Forms;
 
 namespace April19
 {
-    public partial class Form1 : Form
+    public partial class MyUtilite : Form
     {
-        public Form1()
+        public MyUtilite()
         {
             InitializeComponent();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AboutProgram_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("My programs There","About Program");
         }
     }
 }

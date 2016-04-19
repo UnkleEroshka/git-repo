@@ -9,14 +9,22 @@ namespace April18
     {
         static void Main(string[] args)
         {
-            int x1 = 1;
-            int y1 = 3;
-            char sym = '*';
 
-            Console.SetCursorPosition(x1, y1);
-            Console.WriteLine(sym);
+
+            Draw(5, 9, '%');
+
 
             Console.ReadLine();
         }
+
+        static void Draw(int x, int y, char sym)
+        {
+            
+            
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(sym);
+
+        }
+
     }
 }

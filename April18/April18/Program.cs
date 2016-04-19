@@ -9,18 +9,26 @@ namespace April18
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1,2,'*');
-            Point p2 = new Point(5, 5, '#');
-            p1.Draw();
-            
+            Console.SetBufferSize(80, 25);
 
-            List<char> numPoint = new List<char>();
-            numPoint.Add('#');
-            numPoint.Add('*');
-            foreach(int i in numPoint)
-            {
-                Console.WriteLine(i);
-            }
+
+            GorizontalLine gLineDown = new GorizontalLine(1, 70, 22, '*');
+            
+            GorizontalLine gLineUp = new GorizontalLine(1,70,2,'*');
+
+            VerticalLine vLineL = new VerticalLine(2, 22, 1, '*');
+
+            VerticalLine vLineR = new VerticalLine(2, 22, 71, '*');
+
+            gLineUp.Drow();
+
+            vLineR.Drow();
+
+            vLineL.Drow();
+
+            gLineDown.Drow();
+            
+            
             Console.ReadLine();
         }
 

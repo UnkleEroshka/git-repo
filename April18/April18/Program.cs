@@ -9,22 +9,18 @@ namespace April18
     {
         static void Main(string[] args)
         {
+            Point p1 = new Point();
+            p1.x = 5;
+            p1.y = 3;
+            p1.sym = '*';
 
-
-            Draw(5, 9, '%');
-
+            p1.Draw();
+           
 
             Console.ReadLine();
         }
 
-        static void Draw(int x, int y, char sym)
-        {
-            
-            
-            Console.SetCursorPosition(x, y);
-            Console.WriteLine(sym);
-
-        }
+       
 
     }
 }

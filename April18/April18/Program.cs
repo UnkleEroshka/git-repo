@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace April18
 {
@@ -11,25 +12,55 @@ namespace April18
         {
             Console.SetBufferSize(80, 25);
 
-
-            GorizontalLine gLineDown = new GorizontalLine(1, 70, 22, '*');
-            
-            GorizontalLine gLineUp = new GorizontalLine(1,70,2,'*');
-
-            VerticalLine vLineL = new VerticalLine(2, 22, 1, '*');
-
-            VerticalLine vLineR = new VerticalLine(2, 22, 71, '*');
-
-            gLineUp.Drow();
-
-            vLineR.Drow();
-
-            vLineL.Drow();
-
-            gLineDown.Drow();
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
+          
             
             
-            Console.ReadLine();
+
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p,4,Direction.RIGHT);
+
+            FoodCreator foodCreator = new FoodCreator(70,25,'$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+            while (true)
+            {
+                if(walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+                Thread.Sleep(100);
+                if (Console.KeyAvailable)
+                {
+                    
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+
+                }
+
+
+
+                
+                
+               
+
+            }
+
+
+            
+
+
         }
 
        
